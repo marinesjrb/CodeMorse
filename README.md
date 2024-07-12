@@ -1,7 +1,7 @@
 # Code Challenge: Codigo Morse
 Este programa tem como objetivo traduzir mensagens escritas em código morse para mensagens regulares de texto.
 
-Foi escrito em .Net 6.0 e organizado como um MVC simples para uma solução simples, com entrada da requisição via HTTPS método POST 
+Foi escrito em .Net 6.0 e organizado como um MVC simples para uma solução escalável e simples, com entrada da requisição via HTTPS método POST 
 a uma Controller pela rota "/v1/decodes/morsecodes", seguinte os padrões de boas práticas de nomenclatura e responsabilidade de REST APIs,
 possibilitando versionamento e crescimento da aplicação para demais futuras possíveis traduções e operações.
 Possui também um Handler que contém de fato o código que realiza a tradução e lança uma exceção caso algo no fluxo não saia como planejado.
