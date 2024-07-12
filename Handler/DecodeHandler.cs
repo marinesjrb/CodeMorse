@@ -6,11 +6,10 @@ namespace CodeMorse.Handler;
 
 public class DecodeHandler : IDecodeHandler
 {
-    public Response Handle(string morseCode)
+    public string HandleSingleCode(string morseCode)
     {
         try
         {
-            Response response = new Response();
             StringBuilder result = new StringBuilder();
 
             string[] words = morseCode.Split(new[] { "   " }, StringSplitOptions.RemoveEmptyEntries);
@@ -35,7 +34,31 @@ public class DecodeHandler : IDecodeHandler
                 result.Append(" ");
             }
 
-            response.TextTranslation = result.ToString().Trim();
+            return result.ToString().Trim();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Something went wrong. Exception: {ex.Message}");
+            throw new Exception();
+        }
+    }
+
+    public Response HandleMultipleCodes(Request request)
+    {
+        try
+        {
+            Response response = new Response
+            {
+                Texts = new List<string>()
+            };
+
+            foreach (string code in request.Codes)
+            {
+                string translatedText = HandleSingleCode(code);
+
+                response.Texts.Add(translatedText);
+            }
+
             return response;
         }
         catch (Exception ex)

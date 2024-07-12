@@ -2,5 +2,5 @@
 
 public class Response
 {
-    public string? TextTranslation { get; set; }
+    public List<string> Texts { get; set; }
 }

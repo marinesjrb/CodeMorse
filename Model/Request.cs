@@ -2,5 +2,5 @@
 
 public class Request
 {
-    public string MorseCode { get; set; }
+    public List<string> Codes { get; set; }
 }

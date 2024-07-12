@@ -6,7 +6,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddTransient<DecodeHandler>();
 builder.Services.AddScoped<IDecodeHandler, DecodeHandler>();
 
 builder.Services.AddLogging(builder => builder

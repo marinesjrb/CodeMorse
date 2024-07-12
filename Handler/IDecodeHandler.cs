@@ -4,5 +4,6 @@ namespace CodeMorse.Handler;
 
 public interface IDecodeHandler
 {
-    public Response Handle(string morseCode);
+    public string HandleSingleCode(string morseCode);
+    public Response HandleMultipleCodes(Request request);
 }
