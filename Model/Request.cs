@@ -1,4 +1,4 @@
-﻿namespace CodeMorse;
+﻿namespace CodeMorse.Model;
 
 public class Request
 {

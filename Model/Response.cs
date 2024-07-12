@@ -1,7 +1,6 @@
-﻿namespace CodeMorse;
+﻿namespace CodeMorse.Model;
 
 public class Response
 {
-    //[Json]
-    public string TextTranslation { get; set; }
+    public string? TextTranslation { get; set; }
 }

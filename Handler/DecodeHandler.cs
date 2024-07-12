@@ -1,18 +1,18 @@
-﻿using System.Text;
+﻿using CodeMorse.Model;
+using CodeMorse.Utils;
+using System.Text;
 
 namespace CodeMorse.Handler;
 
 public class DecodeHandler : IDecodeHandler
 {
-    public DecodeHandler()
-    {
-    }
-
-    public string Handle(string morseCode)
+    public Response Handle(string morseCode)
     {
         try
         {
-            StringBuilder result = new();
+            Response response = new Response();
+            StringBuilder result = new StringBuilder();
+
             string[] words = morseCode.Split(new[] { "   " }, StringSplitOptions.RemoveEmptyEntries);
 
             var morseCodeToChar = StringUtils.MorseToChar();
@@ -35,7 +35,8 @@ public class DecodeHandler : IDecodeHandler
                 result.Append(" ");
             }
 
-            return result.ToString().Trim();
+            response.TextTranslation = result.ToString().Trim();
+            return response;
         }
         catch (Exception ex)
         {

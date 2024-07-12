@@ -1,4 +1,5 @@
 ﻿using CodeMorse.Handler;
+using CodeMorse.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodeMorse.Controllers;
@@ -19,7 +20,7 @@ public class DecodeController : ControllerBase
     [Route("morseCodes")]
     public IActionResult Post(Request request)
     {
-        var response = _handler.Handle(request.MorseCode);
+        Response response = _handler.Handle(request.MorseCode);
 
         return Ok(response);
     }

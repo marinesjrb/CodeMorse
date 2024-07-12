@@ -1,6 +1,8 @@
-﻿namespace CodeMorse.Handler;
+﻿using CodeMorse.Model;
+
+namespace CodeMorse.Handler;
 
 public interface IDecodeHandler
 {
-    public string Handle(string morseCode);
+    public Response Handle(string morseCode);
 }

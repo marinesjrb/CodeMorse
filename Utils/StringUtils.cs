@@ -1,4 +1,4 @@
-﻿namespace CodeMorse;
+﻿namespace CodeMorse.Utils;
 
 public class StringUtils
 {
